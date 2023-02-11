@@ -9,6 +9,17 @@ const cron =require('node-cron')
 
 router.post('/createEvent',async function(req,res){
     const data =req.body
+
+    // we getting data from user or body like this***********************important************************************
+    // {
+    //     "text":"interview at 15:46 2",
+    //     "day":"11",
+    //     "month":"02",
+    //     "year":"2023",
+    //     "hour":"15",
+    //     "minutes":"08"
+    
+    // }
     
     let dataForCreate={}
     if(!data.text) return res.status(400).send({status:false, message:"event text mandatory"})
