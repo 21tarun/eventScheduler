@@ -22,6 +22,7 @@ router.post('/createEvent',async function(req,res){
     
 
     
+    
 
     dataForCreate.dateTime=dateTime
 
@@ -38,7 +39,6 @@ list=[
     {text:"interview2", dateTime:"2023-02-10 21:13:20"},
     {text:"interview3", dateTime:"2023-02-10 21:15:20"},
     {text:"interview4", dateTime:"2023-02-10 21:56:20"},
-    
     {text:"interview5", dateTime:"2023-02-10 21:13:20"},
     {text:"interview6", dateTime:"2023-02-10 21:13:20"},
     {text:"interview7", dateTime:"2023-02-10 21:13:20"},
@@ -49,19 +49,7 @@ list=[
 
 ]
 
-cron.schedule("* * * * * *",function(){
-    let dateTime=moment.tz('Asia/Calcutta').format()
-    dateTime=dateTime.replace("+05:30","")
-    dateTime=dateTime.replace("T"," ")
-    dateTime=String(dateTime)
 
-    for(let i=0;i<list.length;i++){
-        
-        if(list[i].dateTime==dateTime){
-            console.log(list[i].text)
-        }
-    }
-})
 
 
 
