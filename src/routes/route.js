@@ -5,7 +5,7 @@ const eventModel =require('../models/eventModel')
 const moment= require('moment-timezone')
 
 const cron =require('node-cron')
-const shell =require('shelljs')
+
 
 router.post('/createEvent',async function(req,res){
     const data =req.body
